@@ -1,6 +1,27 @@
-<h2>Login</h2>
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Login</button>
-</form>
+{% extends 'base.html' %}
+
+{% block links %}<link rel="icon" type="imagem/png" href="https://i.ibb.co/wpgQW0h/login.png">{% endblock %}
+
+{% load bootstrap %}
+
+{% block title %} Pagina de Login {% endblock %}
+
+{% block main %}
+
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form|bootstrap}}
+        <br>
+        <button type="submit" class="btn btn-info">Login</button>
+    </form>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container-1">
+            <span class="text-muted">Desenvolvimento com Django para Apreendizagem.</span>
+        </div>
+  </footer>
+{% endblock %}

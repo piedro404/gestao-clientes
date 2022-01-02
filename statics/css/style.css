@@ -1,0 +1,11 @@
+body {
+  background-image: url(https://i.ibb.co/C2SRPG5/django-final.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+ }
+
+.trash-item{
+  float: right;
+  color: red;
+}

@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block links %}<link rel="icon" type="imagem/png" href="https://i.ibb.co/pysrMs1/trash.png">{% endblock %}
+
+{% block title %} Delete {% endblock %}
+
+{% block main %}
+
     <h1>Tem certeza que deseja deletar o registro abaixo?<br>{{ person.first_name }} {{ person.last_name }}</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <button type="submit">Delete</button>
+        <button type="submit" class="btn btn-danger">Delete</button>
     </form>
-    <a href="{% url 'person_list' %}"><button>Voltar</button></a>
+    <a href="{% url 'person_list' %}" class="btn btn-primary">Voltar</a>
 
+{% endblock %}
 
-
-</body>
-</html>
+{% block footer %}
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container-1">
+            <span class="text-muted">Desenvolvimento com Django para Apreendizagem.</span>
+        </div>
+  </footer>
+{% endblock %}
